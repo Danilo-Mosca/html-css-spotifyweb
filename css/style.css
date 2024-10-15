@@ -1,0 +1,122 @@
+/* Palette colori */
+:root {
+    --color-dark: #141922;
+    --color-darkgrey: #282828;
+    --color-light: #FFFFFF;
+    --color-black: #000000;
+    --color-lightgrey: #C1C1C1;
+    --color-highlight: #9AE22D;
+    --color-redcolor: #CA1717;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.debug {
+    border: 1px solid red;
+}
+
+/* Classe fluida per le immagini */
+img {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+}
+
+/* Generals */
+body {
+    background-color: var(--color-darkgrey);
+    color: var(--color-light);
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.wrapper {
+    background-color: var(--color-darkgrey);
+    height: 100vw;
+    /* Soluzione flex */
+    /* display: flex; */
+}
+
+/* FLex utility */
+.d-flex {
+    display: flex;
+}
+
+.f-column {
+    flex-direction: column;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+.j-content-center {
+    justify-content: center;
+}
+
+.a-content-center {
+    align-content: center;
+}
+/* End FLex utility */
+
+.upper-content {
+    background-color: var(--color-dark);    /*--color-dark quello da usare */
+    /* Una strada (non usata) */
+    /* width: 100%;
+    height: calc(100vh - 100px); */
+    /* Altra strada */
+    flex: 1 1 auto;
+    /* overflow-y: auto; */
+    min-height: 0;
+}
+
+/* Playbar */
+footer {
+    background-color: var(--color-darkgrey);
+    /* height: 100px; */
+    flex: 0 0 100px;
+}
+
+/* Sidebar */
+#sidebar {
+    /* width: 230px; */
+    flex: 0 0 230px;
+    background-color: var(--color-black);
+}
+
+/* Main */
+main {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    /* height: 100%; */
+    padding: 100px 20px 20px;
+}
+
+.header {
+    height: 70px;
+    position: fixed;
+    top: 0px;
+    left: 230px;
+    /* width: 100%; */
+    width: calc(100% - 230px);
+    z-index: 3000;
+    background-color: rgba(0, 0, 0, 0.352);
+}
+
+/* Sezione Card */
+.card-content {
+    width: 315px;
+    padding: 5px;
+}
+
+.internal-card {
+    width: 100%;
+}
+.image-card {
+    width: 100%;
+}
