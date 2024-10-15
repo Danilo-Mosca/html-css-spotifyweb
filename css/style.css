@@ -47,10 +47,19 @@ h2 {
     font-size: 2em;
     padding-bottom: 30px;
 }
+
 .row {
     padding-bottom: 30px;
 }
 
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-light);
+}
 
 /* Flex utility */
 .d-flex {
@@ -132,6 +141,24 @@ main {
     background-color: rgba(0, 0, 0, 0.352);
 }
 
+/* Sezione header-menu */
+#header-menu a {
+    color: var(--color-lightgrey);
+    text-transform: uppercase;
+    /* Altrimenti il border che voglio visualizzare al
+    click di quel pulsante del menu sborda troppo
+    sotto */
+    display: block;
+    padding: 10px 20px;
+}
+#header-menu a:hover {
+    color: var(--color-light);
+    border-bottom: 1px solid var(--color-highlight);
+}
+
+
+
+
 /* Sezione Card */
 .main-content .col {
     padding: 8px;
@@ -150,12 +177,14 @@ main {
 .card-image {
     position: relative;
     width: 100%;
-    
+
 }
+
 .card-image:hover {
     opacity: 0.5;
     cursor: pointer;
 }
+
 .card-container .icon-play {
     position: absolute;
     top: 50%;
@@ -176,6 +205,7 @@ main {
     overflow: hidden;
 }
 
+/* End Sezione Card */
 
 
 /* ------------ *
@@ -207,18 +237,18 @@ main {
     /* Restringo la sidebar */
     #sidebar {
         flex: 0 0 30px;
-        
+
     }
 
-/* Restringo anche l'header semitrasparente */
-.header {
-    height: 70px;
-    position: fixed;
-    top: 0px;
-    left: 61px;
-    width: calc(100% - 30px);
+    /* Restringo anche l'header semitrasparente */
+    .header {
+        height: 70px;
+        position: fixed;
+        top: 0px;
+        left: 61px;
+        width: calc(100% - 30px);
 
-}
+    }
 }
 
 @media screen and (max-width: 576px) {
