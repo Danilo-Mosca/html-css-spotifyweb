@@ -184,6 +184,12 @@ main {
     .main-content .col {
         width: calc(100% / 2);
     }
+
+    /* Restringo la sidebar */
+    #sidebar {
+        flex: 0 0 30px;
+        
+    }
 }
 
 @media screen and (max-width: 576px) {
