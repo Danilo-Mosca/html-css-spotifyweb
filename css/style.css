@@ -16,9 +16,9 @@
     box-sizing: border-box;
 }
 
-.debug {
+/* .debug {
     border: 1px solid red;
-}
+} */
 
 /* Classe fluida per le immagini */
 img {
@@ -52,6 +52,27 @@ h2 {
     padding-bottom: 30px;
 }
 
+.upgrade-button {
+    margin-right: 10px;
+    padding: 10px 40px;
+    border-radius: 20px;
+    color: var(--color-light);
+    background-color: transparent;
+    border: 2px solid var(--color-lightgrey);
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.upgrade-button:hover {
+    transform: scale(1.1);
+    /* Imposto una transizione così da rendere più
+    fluido l'ingrandirsi del pulsante all'hover
+    con il mouse */
+    transition: all 0.5s ease-out;
+
+}
+
 ul {
     list-style: none;
 }
@@ -82,16 +103,23 @@ a {
     justify-content: center;
 }
 
+.j-content-end {
+    justify-content: flex-end;
+}
+
 .a-content-center {
     align-content: center;
+}
+
+.a-items-center {
+    align-items: center;
 }
 
 /* Utilities */
 
 
 
-/* End FLex utility */
-
+/* End Flex utility */
 .upper-content {
     background-color: var(--color-dark);
     /*--color-dark quello da usare */
@@ -145,18 +173,43 @@ main {
 #header-menu a {
     color: var(--color-lightgrey);
     text-transform: uppercase;
-    /* Altrimenti il border che voglio visualizzare al
-    click di quel pulsante del menu sborda troppo
-    sotto */
+    font-weight: 700;
+    /* Inserire sempre il display: block; altrimenti
+    quello che voglio visualizzare rischierebbe di
+    sbordare troppo in basso o rimarrebbe attaccato
+    troppo ai lati */
     display: block;
     padding: 10px 20px;
 }
+
 #header-menu a:hover {
     color: var(--color-light);
-    border-bottom: 1px solid var(--color-highlight);
+    /* border-bottom: 1px solid var(--color-highlight); */
 }
 
+#header-menu a::after {
+    content: '';
+    /* Se non lo blocco non compare la riga verde */
+    display: block;
+    /* Imposto la larghezza la metà del suo contenitore,
+    così da visualizzare mezzo bordo di riga sottolineata
+    invece che coprire tutta la parola dell'ancora */
+    width: 50%;
+    /* La centro bene orizzontalmente altrimenti comparirebbe
+    all'inizio della parola con ancora */
+    margin: 0 auto;
+    /* Imposto un'altezzs della riga da visualizzare */
+    height: 3px;
+}
 
+/* Solo dopo che ho fatto l'hover col mouse sull'ancora,
+visualizzo la riga di sottolineatura con altezza 3px 
+di colore verde */
+#header-menu a:hover::after {
+    background-color: var(--color-highlight);
+}
+
+/* End sezione header-menu */
 
 
 /* Sezione Card */
@@ -177,6 +230,7 @@ main {
 .card-image {
     position: relative;
     width: 100%;
+    display: block;
 
 }
 
@@ -184,6 +238,7 @@ main {
     opacity: 0.5;
     cursor: pointer;
 }
+
 
 .card-container .icon-play {
     position: absolute;
