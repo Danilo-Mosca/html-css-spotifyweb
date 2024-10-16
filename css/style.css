@@ -16,9 +16,9 @@
     box-sizing: border-box;
 }
 
-/* .debug {
+.debug {
     border: 1px solid red;
-} */
+}
 
 /* Classe fluida per le immagini */
 img {
@@ -42,17 +42,15 @@ body {
 .wrapper {
     background-color: var(--color-darkgrey);
     height: 100vh;
-    /* Soluzione flex */
-    /* display: flex; */
 }
 
 h2 {
     font-size: 2em;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
 }
 
 .row {
-    padding-bottom: 30px;
+    padding: 30px 0px;
 }
 
 .upgrade-button {
@@ -82,6 +80,10 @@ ul {
 
 a {
     text-decoration: none;
+    color: var(--color-light);
+}
+
+a:hover {
     color: var(--color-light);
 }
 
@@ -131,7 +133,12 @@ a {
     height: calc(100vh - 100px); */
     /* Altra strada */
     flex: 1 1 auto;
+
+    /* SOLUZIONI CONSIGLIATE PER IL BUG DI OVERFLOW
+    DI FLEX
+    1) */
     /* overflow-y: auto; */
+    /* 2) */
     min-height: 0;
 }
 
@@ -221,8 +228,12 @@ con altezza 3px di colore verde */
     width: calc(100% / 6);
 }
 
-.card-container h5 {
+.card-container small {
     color: var(--color-lightgrey);
+    font-weight: 600;
+}
+.card-container h3 {
+    padding-bottom: 10px;
 }
 
 .card-title {
@@ -275,8 +286,10 @@ al passaggio del mouse) */
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 100%;
-    height: 100%;
+    right: 0px;
+    bottom: 0px;
+    /* width: 100%;
+    height: 100%; */
     background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -294,7 +307,7 @@ al passaggio del mouse) */
     }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 996px) {
 
     /* Imposto che ogni riga contiene 3 card */
     .main-content .col {
