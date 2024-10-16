@@ -41,7 +41,7 @@ body {
 
 .wrapper {
     background-color: var(--color-darkgrey);
-    height: 100vw;
+    height: 100vh;
     /* Soluzione flex */
     /* display: flex; */
 }
@@ -205,9 +205,9 @@ main {
     height: 3px;
 }
 
-/* Solo dopo che ho fatto l'hover col mouse sull'ancora,
-visualizzo la riga di sottolineatura con altezza 3px 
-di colore verde */
+/* Appena fatto l'hover col mouse sul testo ancorato,
+visualizzo subito dopo questola riga di sottolineatura 
+con altezza 3px di colore verde */
 #header-menu a:hover::after {
     background-color: var(--color-highlight);
 }
@@ -238,15 +238,18 @@ di colore verde */
 
 }
 
-#popular-artist .card-image img {
+.card-image-rounded {
     position: relative;
     width: 100%;
+    display: block;
+    cursor: pointer;
     border-radius: 50%;
-    /* Nascondo la parte in eccesso dell'immagine */
+    /* Nascondo la parte in eccesso dell'immagine 
+    che non rientra nel cerchio */
     overflow: hidden;
 }
 
-/* Mi centro perbene l'icona play sulle immagini
+/* Mi centro per bene l'icona play sulle immagini
 e la nascondo  con display: none; */
 .card-container .icon-play {
     position: absolute;
@@ -258,14 +261,16 @@ e la nascondo  con display: none; */
 
 /* All'hover sulla card delle immagini 
 faccio ricomparire l'icona play */
-.card-image:hover .icon-play {
+.card-image:hover .icon-play,
+.card-image-rounded:hover .icon-play {
     display: block;
 }
 
 /* Faccio lo stesso con il layover 
 (usato per creare un'opacità all'immagine 
 al passaggio del mouse) */
-.card-image:hover .layover {
+.card-image:hover .layover,
+.card-image-rounded:hover .layover {
     content: '';
     position: absolute;
     top: 0px;
@@ -273,20 +278,6 @@ al passaggio del mouse) */
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-}
-
-/* Ed anche per il layover-rounded usato per
-le immagini arrotondate */
-#popular-artist .card-image:hover .layover-rounded {
-    content: '';
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    overflow: hidden;
 }
 
 /* End Sezione Card */
