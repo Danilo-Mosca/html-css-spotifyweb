@@ -213,9 +213,12 @@ main {
 }
 
 /* Appena fatto l'hover col mouse sul testo ancorato,
-visualizzo subito dopo questola riga di sottolineatura 
-con altezza 3px di colore verde */
-#header-menu a:hover::after {
+visualizzo subito dopo questo la riga di sottolineatura 
+con altezza 3px di colore verde.
+Con active invece gli dico di tenere visibike la 
+sottolineatura per quell'ancora del menu in cui mi trovo */
+#header-menu a:hover::after,
+#header-menu a.active:after {
     background-color: var(--color-highlight);
 }
 
@@ -232,6 +235,7 @@ con altezza 3px di colore verde */
     color: var(--color-lightgrey);
     font-weight: 600;
 }
+
 .card-container h3 {
     padding-bottom: 10px;
 }
