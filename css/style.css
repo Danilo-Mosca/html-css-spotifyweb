@@ -42,6 +42,7 @@ body {
 .wrapper {
     background-color: var(--color-darkgrey);
     height: 100vh;
+    overflow: hidden;
 }
 
 h2 {
@@ -60,6 +61,7 @@ h2 {
     color: var(--color-light);
     background-color: transparent;
     border: 2px solid var(--color-lightgrey);
+    margin-left: auto;
     text-transform: uppercase;
     font-weight: 600;
     cursor: pointer;
@@ -67,6 +69,7 @@ h2 {
 
 .upgrade-button:hover {
     transform: scale(1.1);
+    border: 2px solid var(--color-light);
     /* Imposto una transizione così da rendere più
     fluido l'ingrandirsi del pulsante all'hover
     con il mouse */
@@ -142,18 +145,71 @@ a:hover {
     min-height: 0;
 }
 
-/* Playbar */
-footer {
-    background-color: var(--color-darkgrey);
-    /* height: 100px; */
-    flex: 0 0 100px;
-}
-
 /* Sidebar */
 #sidebar {
     /* width: 230px; */
     flex: 0 0 230px;
     background-color: var(--color-black);
+    /* ALTEZZA MINIMA SOTTO LA QUALE LA SIDEBAR
+    NON DEVE SCENDERE */
+    min-height: 400px;
+    overflow: hidden;
+}
+
+/* Altezza sidebar top: il 100% dell'altezza meno i 90px 
+della sidebar-bottom */
+.sidebar-top {
+    height: calc(100% - 90px);
+}
+
+/* Altezza sidebar-bottom */
+.sidebar-bottom {
+    /* position: relative; */
+    height: 90px;
+    background-color: var(--color-darkgrey);
+    /* z-index: 5; */
+}
+
+#logo img {
+    width: 100%;
+}
+
+/* Disposizione e allineamenti degli elementi della sidebar-top */
+#logo,
+.sidebar-nav a,
+.playlist-nav a {
+    display: flex;
+    padding: 10px 20px 0 10px;
+    align-items: center;
+}
+
+.sidebar-nav img {
+    height: 25px;
+    width: auto;
+}
+
+/* Le do già subito il bordo per evitare lo scattino 
+degli li quando con l'hover compare il bordo */
+.sidebar-nav a {
+    border-left: 3px solid transparent;
+}
+
+/* Ora faccio comparire il bordo a sinistra e lo assegno fisso
+alla pagina attualmente visitata */
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    border-left: 3px solid var(--color-highlight);
+}
+
+/* Playlist-nav */
+.playlist-nav {
+    flex: 1 1 auto;
+    min-height: 0px;
+}
+
+.playlist-nav ul {
+    flex: 1 1 auto;
+    overflow-y: auto;
 }
 
 /* Main */
@@ -165,7 +221,7 @@ main {
     /* Nascondo la barra orizzontale 
     in caso di restringimento eccessivo
     della finestra */
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 .header {
@@ -243,6 +299,7 @@ sottolineatura per quell'ancora del menu in cui mi trovo */
 .card-title {
     text-align: center;
     padding: 8px 0;
+    cursor: pointer;
 }
 
 .card-image {
@@ -253,7 +310,15 @@ sottolineatura per quell'ancora del menu in cui mi trovo */
 
 }
 
-.card-image-rounded {
+/* CSS ellipsis NEL CASO VOLESSI UTILIZZARLA */
+/* .card-container .card-title h3 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow:hidden;
+} */
+
+/* Creo la card arrotondata */
+#popular-artist .card-image {
     position: relative;
     width: 100%;
     display: block;
@@ -276,16 +341,14 @@ e la nascondo  con display: none; */
 
 /* All'hover sulla card delle immagini 
 faccio ricomparire l'icona play */
-.card-image:hover .icon-play,
-.card-image-rounded:hover .icon-play {
+.card-image:hover .icon-play {
     display: block;
 }
 
 /* Faccio lo stesso con il layover 
 (usato per creare un'opacità all'immagine 
 al passaggio del mouse) */
-.card-image:hover .layover,
-.card-image-rounded:hover .layover {
+.card-image:hover .layover {
     content: '';
     position: absolute;
     top: 0px;
@@ -295,10 +358,30 @@ al passaggio del mouse) */
     /* width: 100%;
     height: 100%; */
     background-color: rgba(0, 0, 0, 0.5);
+    /* Aggiungo una transizione sl layover per renderlo più fluido */
+    transition: all 0.5s ease-out;
 }
 
 /* End Sezione Card */
 
+/* Playbar footer */
+footer {
+    background-color: var(--color-darkgrey);
+    /* height: 100px; */
+    flex: 0 0 100px;
+}
+.left-player {
+    width: 20vw;
+    flex-grow: 0;
+}
+.center-player {
+    width: 80vw;
+    flex-grow: 1;
+}
+.right-player {
+    width: 20vw;
+    flex-grow: 0;
+}
 
 /* ------------ *
  *  Media query * 
@@ -337,7 +420,7 @@ al passaggio del mouse) */
         height: 70px;
         position: fixed;
         top: 0px;
-        left: 61px;
+        left: 70px;
         width: calc(100% - 30px);
 
     }

@@ -16,11 +16,48 @@
 <body>
     <div class="wrapper d-flex f-column">
         <div class="upper-content d-flex debug">
-            <div id="sidebar" class="debug">
-                sidebar
+
+            <div id="sidebar d-flex f-column" class="debug">
+                <div class="sidebar-top debug">
+                    <div id="logo" class="debug">
+                        <img src="img/logo.svg" alt="Logo Spotify">
+                    </div>
+                    <ul class="sidebar-nav debug">
+                        <li>
+                            <a href="#" class="active">
+                                <img src="img/home.svg" alt="Homepage link">
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/search.svg" alt="Cerca">
+                                <span>Cerca</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/libreria.svg" alt="Libreria">
+                                <span>La tua libreria</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="playlist-nav d-flex f-column">
+                        <h4>Playlist</h4>
+                        <ul>
+                            <li><a href="#">Nome Playlist</a></li>
+                            <li><a href="#">Nome Playlist</a></li>
+                            <li><a href="#">Nome Playlist</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sidebar-bottom debug">
+
+                </div>
             </div>
+
             <main class="debug">
-                <div class="header d-flex j-content-end a-items-center debug">
+                <div class="header d-flex a-items-center debug">
                     <button class="upgrade-button">Effettua l'upgrade</button>
                 </div>
                 <div class="main-content">
@@ -177,7 +214,7 @@
                         <div class="row d-flex f-wrap debug">
                             <div class="col debug">
                                 <div class="card-container debug">
-                                    <div class="card-image-rounded debug">
+                                    <div class="card-image debug">
                                         <img src="img/youg.jpeg" alt="Lana del Rey Young & Beautiful">
                                         <div class="layover">
                                             <i class="icon-play fa-regular fa-circle-play fa-7x"></i>
@@ -192,7 +229,7 @@
 
                             <div class="col debug">
                                 <div class="card-container debug">
-                                    <div class="card-image-rounded debug">
+                                    <div class="card-image debug">
                                         <img src="img/einaudi.jpeg" alt="Einaudi">
                                         <div class="layover">
                                             <i class="icon-play fa-regular fa-circle-play fa-7x"></i>
@@ -209,8 +246,10 @@
                 </div>
             </main>
         </div>
-        <footer class="debug">
-            footer
+        <footer class="d-flex debug">
+            <div class="left-player debug ">left player</div>
+            <div class="center-player debug">center player</div>
+            <div class="right-player debug">right player</div>
         </footer>
     </div>
 </body>
