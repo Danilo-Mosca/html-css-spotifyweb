@@ -16,9 +16,9 @@
     box-sizing: border-box;
 }
 
-.debug {
+/* .debug {
     border: 1px solid red;
-}
+} */
 
 /* Classe fluida per le immagini */
 img {
@@ -60,6 +60,11 @@ h4 {
     text-transform: uppercase;
 }
 
+hr {
+    border: 1px solid var(--color-lightgrey);
+    margin: 0 15px;
+}
+
 .upgrade-button {
     margin-right: 10px;
     padding: 10px 40px;
@@ -94,6 +99,17 @@ a {
 }
 
 a:hover {
+    color: var(--color-light);
+}
+
+/* Icona Crea Playlist */
+.fa-square-plus {
+    color: var(--color-lightgrey);
+    cursor: pointer;
+}
+
+/* Over icona Crea Playlist */
+.fa-square-plus:hover {
     color: var(--color-light);
 }
 
@@ -178,13 +194,13 @@ a:hover {
 /* Altezza sidebar top: il 100% dell'altezza meno i 90px 
 della sidebar-bottom */
 .sidebar-top {
-    height: calc(100% - 90px);
+    height: calc(100% - 150px);
 }
 
 /* Altezza sidebar-bottom */
 .sidebar-bottom {
     /* position: relative; */
-    height: 90px;
+    height: 150px;
     background-color: var(--color-darkgrey);
 }
 
@@ -195,10 +211,18 @@ della sidebar-bottom */
 /* Disposizione e allineamenti degli elementi della sidebar-top */
 #logo,
 .sidebar-nav a,
-.playlist-nav a {
+.playlist-nav a,
+.sidebar-bottom ul.install-app li,
+.sidebar-bottom ul.install-app li a {
     display: flex;
     padding: 10px 20px 10px 10px;
     align-items: center;
+}
+/* Spazio un altro pò l'icona "profile.svg" e
+la a John Doe per allinearlo perfettamente
+all'elemento di sopra */
+.sidebar-bottom ul.install-app li:last-child {
+    margin-left: 3px;
 }
 
 #sidebar .sidebar-top .playlist-nav ul li .create-playlist {
@@ -212,9 +236,20 @@ della sidebar-bottom */
     align-content: center;
 }
 
-.sidebar-nav img {
+.sidebar-nav img,
+.sidebar-bottom .install-app img {
     height: 25px;
     width: auto;
+    /* Do il colore "lightgrey" alle immagini .svg con un filtro */
+    filter: brightness(0) saturate(100%) invert(78%) sepia(1%) saturate(0%) hue-rotate(51deg) brightness(100%) contrast(92%);
+
+
+}
+
+/* Colori icone e immagini .svg della sidebar in hover */
+.sidebar-top .sidebar-nav li a:hover,
+.sidebar-bottom .install-app li img:hover {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(2%) hue-rotate(352deg) brightness(110%) contrast(101%);
 }
 
 /* Le do già subito il bordo per evitare lo scattino 
@@ -472,6 +507,12 @@ footer {
     .sidebar-top #logo img.display-none {
         display: block;
         width: 30px;
+    }
+
+    /* Nascondo i testi della sidebar-bottom */
+    .sidebar-bottom ul.install-app li a,
+    .sidebar-bottom .install-app hr {
+        display: none;
     }
 }
 
