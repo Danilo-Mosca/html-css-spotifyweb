@@ -201,7 +201,7 @@ della sidebar-bottom */
 .sidebar-bottom {
     /* position: relative; */
     height: 150px;
-    background-color: var(--color-darkgrey);
+    background-color: var(--color-black);
 }
 
 #logo img {
@@ -218,6 +218,7 @@ della sidebar-bottom */
     padding: 10px 20px 10px 10px;
     align-items: center;
 }
+
 /* Spazio un altro pò l'icona "profile.svg" e
 la a John Doe per allinearlo perfettamente
 all'elemento di sopra */
@@ -514,6 +515,17 @@ footer {
     .sidebar-bottom .install-app hr {
         display: none;
     }
+
+    /* Riduco anche l'altezza della sidebar-bottom */
+    .sidebar-bottom {
+        height: 90px;
+    }
+
+    /* E allugno quella della sidebar-top */
+    .sidebar-top {
+        height: calc(100% - 90px);
+    }
+
 }
 
 @media screen and (max-width: 576px) {
