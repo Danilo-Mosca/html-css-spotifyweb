@@ -25,8 +25,8 @@ img {
     width: 100%;
     max-width: 100%;
     display: block;
-    /* Riempio l'immagine nel contenitore mantenendo le 
-    sue proporzioni ma ritagliando eventualmente i 
+    /* Riempio l'immagine nel contenitore mantenendo le
+    sue proporzioni ma ritagliando eventualmente i
     bordi per adattarla al suo contenitore */
     object-fit: cover;
 }
@@ -66,7 +66,7 @@ hr {
 }
 
 .upgrade-button {
-    margin-right: 10px;
+    margin-right: 20px;
     padding: 10px 40px;
     border-radius: 20px;
     color: var(--color-light);
@@ -182,8 +182,8 @@ a:hover {
     /* ALTEZZA MINIMA SOTTO LA QUALE LA SIDEBAR
     NON DEVE SCENDERE (SERVE PER NON FAR SALIRE
     LA sidebar-bottom TROPPO IN ALTO E ANDARE COSI'
-    AD OCCUPARE LA SEZIONE DELLE PLAYLIST) 
-    Come se dicessi: sidebar-bottom quando si restringe 
+    AD OCCUPARE LA SEZIONE DELLE PLAYLIST)
+    Come se dicessi: sidebar-bottom quando si restringe
     lo schermo in altezza sali, ma bloccati quando quando
     il container in cui sei contenuta arriva a 400px */
     min-height: 400px;
@@ -191,7 +191,7 @@ a:hover {
     overflow: hidden;
 }
 
-/* Altezza sidebar top: il 100% dell'altezza meno i 90px 
+/* Altezza sidebar top: il 100% dell'altezza meno i 90px
 della sidebar-bottom */
 .sidebar-top {
     height: calc(100% - 150px);
@@ -253,7 +253,11 @@ all'elemento di sopra */
     filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(2%) hue-rotate(352deg) brightness(110%) contrast(101%);
 }
 
-/* Le do già subito il bordo per evitare lo scattino 
+.sidebar-bottom .install-app li:last-of-type a {
+    color: var(--color-light);
+}
+
+/* Le do già subito il bordo per evitare lo scattino
 degli li quando con l'hover compare il bordo */
 .sidebar-nav a {
     border-left: 3px solid transparent;
@@ -283,7 +287,7 @@ main {
     overflow-y: auto;
     /* height: 100%; */
     padding: 100px 20px 20px;
-    /* Nascondo la barra orizzontale 
+    /* Nascondo la barra orizzontale
     in caso di restringimento eccessivo
     della finestra */
     /* overflow-x: hidden; */
@@ -334,9 +338,9 @@ main {
 }
 
 /* Appena fatto l'hover col mouse sul testo ancorato,
-visualizzo subito dopo questo la riga di sottolineatura 
+visualizzo subito dopo questo la riga di sottolineatura
 con altezza 3px di colore verde.
-Con active invece gli dico di tenere visibile la 
+Con active invece gli dico di tenere visibile la
 sottolineatura per quell'ancora del menu in cui mi trovo */
 #header-menu a:hover::after,
 #header-menu a.active:after {
@@ -389,7 +393,7 @@ sottolineatura per quell'ancora del menu in cui mi trovo */
     display: block;
     cursor: pointer;
     border-radius: 50%;
-    /* Nascondo la parte in eccesso dell'immagine 
+    /* Nascondo la parte in eccesso dell'immagine
     che non rientra nel cerchio */
     overflow: hidden;
 }
@@ -404,14 +408,14 @@ e la nascondo  con display: none; */
     display: none;
 }
 
-/* All'hover sulla card delle immagini 
+/* All'hover sulla card delle immagini
 faccio ricomparire l'icona play */
 .card-image:hover .icon-play {
     display: block;
 }
 
-/* Faccio lo stesso con il layover 
-(usato per creare un'opacità all'immagine 
+/* Faccio lo stesso con il layover
+(usato per creare un'opacità all'immagine
 al passaggio del mouse) */
 .card-image:hover .layover {
     content: '';
@@ -453,7 +457,7 @@ footer {
 }
 
 /* ------------ *
- *  Media query * 
+ *  Media query *
  * ------------ */
 @media screen and (max-width: 1200px) {
 
@@ -468,6 +472,11 @@ footer {
     /* Imposto che ogni riga contiene 3 card */
     .main-content .col {
         width: calc(100% / 3);
+    }
+
+    /* Sposto il pulsante */
+    .upgrade-button {
+        margin-right: 40px;
     }
 }
 
@@ -534,4 +543,9 @@ footer {
     .main-content .col {
         width: calc(100% / 1);
     }
+
+    .upgrade-button {
+        padding: 10px 20px;
+    }
+
 }
