@@ -270,10 +270,33 @@
                 </div>
             </main>
         </div>
-        <footer class="d-flex debug">
-            <div class="left-player debug ">left player</div>
-            <div class="center-player debug">center player</div>
-            <div class="right-player debug">right player</div>
+        <footer class="d-flex j-content-center a-items-center debug">
+            <div class="left-player debug "></div>
+            <div class="center-player d-flex j-content-center a-content-center a-items-center debug">
+                <div class="playbar-center debug">
+                    <div class="playbar-icons debug">
+                        <ul class="d-flex j-content-center a-items-center debug">
+                            <li><i class="fas fa-random"></i></li>
+                            <li><i class="fas fa-step-backward"></i></li>
+                            <li><i class="fa-regular fa-circle-play"></i></li>
+                            <li><i class="fas fa-step-forward"></i></li>
+                            <li><i class="fas fa-redo-alt"></i></li>
+                        </ul>
+                    </div>
+                    <div class="playbar-time d-flex space-between a-items-center debug">
+                        <span>
+                            2.15
+                        </span>
+                        <div class="controller-bar d-flex">
+                            <input type="range" value="215" min="0" max="430">
+                        </div>
+                        <span>
+                            4.30
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="right-player debug"></div>
         </footer>
     </div>
 </body>

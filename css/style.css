@@ -16,9 +16,9 @@
     box-sizing: border-box;
 }
 
-/* .debug {
+.debug {
     border: 1px solid red;
-} */
+}
 
 /* Classe fluida per le immagini */
 img {
@@ -136,6 +136,10 @@ a:hover {
 
 .j-content-end {
     justify-content: flex-end;
+}
+
+.j-content-space-around {
+    justify-content: space-around;
 }
 
 .a-content-center {
@@ -433,15 +437,29 @@ al passaggio del mouse) */
 
 /* End Sezione Card */
 
-/* Playbar footer */
+
+/* ------------------------------- *
+ * ------- Playbar footer -------- *
+ * ------------------------------- */
 footer {
     background-color: var(--color-darkgrey);
     /* height: 100px; */
     flex: 0 0 100px;
+    /* La metto in prima posizione rispetto a tutti
+    gli altri container   */
     z-index: 3001;
 }
 
-.left-player {
+/* Posizionamenti e padding */
+.left-player,
+.right-player,
+.center-player {
+    padding: 5px;
+    height: 100%;
+}
+
+.left-player,
+.right-player {
     width: 20vw;
     flex-grow: 0;
 }
@@ -451,9 +469,94 @@ footer {
     flex-grow: 1;
 }
 
-.right-player {
-    width: 20vw;
-    flex-grow: 0;
+
+/* Personalizzo i colori dell'input type range 
+e (con height: 3px) do uno spessore minore alla barra 
+di scorrimento audio */
+.playbar-time .controller-bar input[type="range"] {
+    accent-color: var(--color-highlight);
+    height: 3px;
+    width: 100%;
+}
+
+/* Mi assicuro che la controller bar contenente 
+l'input tipe range sia larga il 100% del suo contenuto */
+.playbar-time .controller-bar {
+    width: 100%;
+}
+
+/* .playbar-time .controller-bar input[type="range"] {
+    flex-grow: 5;
+} */
+
+.playbar-time span {
+    width: 10%;
+}
+
+.center-player .playbar-center {
+    width: 70%;
+}
+
+/* Do a .playbar-icons (figlio di .center-player) 
+un'altezza del 60% rispetto al padre */
+.center-player .playbar-icons {
+    height: 60%;
+}
+
+/* Il restante 40% lo do al .playbar-time contenente
+gli span del tempo e l'input[range] */
+.center-player .playbar-time {
+    height: 40%;
+    width: 100%;
+}
+
+/*Distanzio con un gap le icone superiori (contenute in una lista)
+della barra centrale e assegno un font-size maggiore */
+.center-player .playbar-icons ul {
+    gap: 25px;
+    font-size: 1.5em;
+}
+
+/* A quella centrale del play le assegno una dimensione 
+leggermente superiore */
+.center-player .fa-circle-play {
+    font-size: 1.7em;
+}
+
+/* Distanzio leggermente gli span contenenti 
+il tempo e la durata del brano */
+.playbar-time span {
+    padding: 5px 10px;
+}
+
+/* SCALE E ANIMAZIONI */
+/* ingrandisco leggermente le icone della playbar all'hover 
+e gli do un'animazione di transizione */
+.playbar-icons ul li:hover {
+    transform: scale(1.1);
+    /* Imposto una transizione così da rendere più
+    fluido l'ingrandirsi dell'icona all'hover
+    con il mouse */
+    transition: all 0.5s ease-in;
+}
+
+/* Do un'animazione di transizione alle icone 
+della playbar centrale */
+.playbar-icons ul li {
+    transition: all 0.8s ease-in;
+}
+
+/* L'icona play la ingrandisco leggermente di più */
+.playbar-icons .fa-circle-play:hover {
+    transform: scale(1.2);
+    transition: all 0.8s ease-in;
+}
+
+/* FINE SCALE E ANIMAZIONI */
+
+/* Do a tutte le icone del footer un cursor pointer */
+.playbar-icons ul li {
+    cursor: pointer;
 }
 
 /* ------------ *
@@ -535,6 +638,14 @@ footer {
         height: calc(100% - 90px);
     }
 
+    /* ALLINEO AL CENTRO DELLA SIDEBAR RISTRETTA
+    IL LOGO, LA SIDEBAR SUPERIORE E QUELLA INFERIOREN */
+    #logo,
+    .sidebar-top li,
+    .sidebar-bottom ul li {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 @media screen and (max-width: 576px) {
