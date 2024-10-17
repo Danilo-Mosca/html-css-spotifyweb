@@ -16,9 +16,9 @@
     box-sizing: border-box;
 }
 
-/* .debug {
+.debug {
     border: 1px solid red;
-} */
+}
 
 /* Classe fluida per le immagini */
 img {
@@ -473,8 +473,8 @@ footer {
 
 /* ------ Playbar centrale ------- */
 
-/* Personalizzo i colori delle input type range 
-e (con height: 3px) do uno spessore minore alla barra 
+/* Personalizzo i colori delle input type range
+e (con height: 3px) do uno spessore minore alla barra
 di scorrimento audio */
 .playbar-time .controller-bar input[type="range"],
 .right-player .controller-volume input[type="range"] {
@@ -507,7 +507,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 /* ------------- END BONUS INPUT RANGE ------------- */
 
-/* Mi assicuro che la controller bar contenente 
+/* Mi assicuro che la controller bar contenente
 l'input tipe range sia larga il 100% del suo contenuto */
 .playbar-time .controller-bar,
 .right-player .controller-volume input[type="range"] {
@@ -528,7 +528,7 @@ così sbordure inaspettate */
     width: 80%;
 }
 
-/* Do a .playbar-icons (figlio di .center-player) 
+/* Do a .playbar-icons (figlio di .center-player)
 un'altezza del 60% rispetto al padre */
 .center-player .playbar-icons {
     height: 60%;
@@ -548,20 +548,20 @@ della barra centrale e assegno un font-size maggiore */
     font-size: 1.5em;
 }
 
-/* A quella centrale del play le assegno una dimensione 
+/* A quella centrale del play le assegno una dimensione
 leggermente superiore */
 .center-player .fa-circle-play {
     font-size: 1.7em;
 }
 
-/* Distanzio leggermente gli span contenenti 
+/* Distanzio leggermente gli span contenenti
 il tempo e la durata del brano */
 .playbar-time span {
     padding: 5px 10px;
 }
 
 /* SCALE E ANIMAZIONI */
-/* ingrandisco leggermente le icone della playbar all'hover 
+/* ingrandisco leggermente le icone della playbar all'hover
 e gli do un'animazione di transizione */
 .playbar-icons ul li:hover,
 .right-player div i:hover {
@@ -656,19 +656,19 @@ e gli do un'animazione di transizione */
 /* Colore della traccia, cioè dello spazio vuoto
    interno alla barra di scorrimento */
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px #99ff00; 
+    box-shadow: inset 0 0 5px #99ff00;
     border-radius: 10px;
   }
-   
+
   /* Colore */
   ::-webkit-scrollbar-thumb {
-    background: var(--color-highlight); 
+    background: var(--color-highlight);
     border-radius: 10px;
   }
-  
+
   /* Colore all'hover col mouse della barra di scorrimento */
   ::-webkit-scrollbar-thumb:hover {
-    background: #57801b; 
+    background: #57801b;
   }
 /* ------- FINE BONUS BARRA LATERALE ------- */
 
@@ -706,7 +706,7 @@ e gli do un'animazione di transizione */
         width: 60vw;
     }
 
-    /* Riduco la spaziatura tra la playbar centrale e il suo 
+    /* Riduco la spaziatura tra la playbar centrale e il suo
     contenitore */
     .center-player .playbar-center {
         width: 90%;
@@ -782,6 +782,15 @@ e gli do un'animazione di transizione */
         justify-content: center;
     }
 
+    /* Do un flex-wrap accapo così che le icone si allineino
+    verticalmente e gli imposto un align-content centrale
+    così da ridurre il gap tra loro */
+    .left-player .icon {
+        flex-wrap: wrap;
+        width: 10%;
+        align-content: center;
+    }
+
     /* Riduco l'ampiezza dei vari player del footer */
     .left-player,
     .right-player {
@@ -822,7 +831,7 @@ e gli do un'animazione di transizione */
         width: 40vw;
     }
 
-    /* Tolgo la spaziatura tra la playbar centrale e il suo 
+    /* Tolgo la spaziatura tra la playbar centrale e il suo
     contenitore */
     .center-player .playbar-center {
         width: 100%;
