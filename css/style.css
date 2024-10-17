@@ -470,29 +470,49 @@ footer {
 }
 
 
-/* Personalizzo i colori dell'input type range 
+/* ------ Playbar centrale ------- */
+
+/* Personalizzo i colori delle input type range 
 e (con height: 3px) do uno spessore minore alla barra 
 di scorrimento audio */
-.playbar-time .controller-bar input[type="range"] {
-    accent-color: var(--color-highlight);
+.playbar-time .controller-bar input[type="range"],
+.right-player .controller-volume input[type="range"] {
+    accent-color: var(--color-lightgrey);
     height: 3px;
     width: 100%;
 }
 
+/* Cambio lo spessore della linea del volume solo per
+la classe .controller-volume */
+/* .right-player .controller-volume input[type="range"] {
+    
+    height: 4px;
+} */
+
+/* Colore all'hover */
+.playbar-time .controller-bar input[type="range"]:hover,
+.right-player .controller-volume input[type="range"]:hover {
+    accent-color: var(--color-highlight);
+
+}
+
 /* Mi assicuro che la controller bar contenente 
 l'input tipe range sia larga il 100% del suo contenuto */
-.playbar-time .controller-bar {
+.playbar-time .controller-bar,
+.right-player .controller-volume input[type="range"] {
     width: 100%;
 }
 
-/* .playbar-time .controller-bar input[type="range"] {
-    flex-grow: 5;
-} */
-
+/* Colore span tempo */
 .playbar-time span {
     width: 10%;
+    color: var(--color-lightgrey);
 }
 
+/* Assegno a tutta la playbar centrale una larghezza
+del 70% del suo contenitore così da creare spaziature
+tra la sezione di destra e quella di sinistra ed evitare
+così sbordure inaspettate */
 .center-player .playbar-center {
     width: 70%;
 }
@@ -532,31 +552,88 @@ il tempo e la durata del brano */
 /* SCALE E ANIMAZIONI */
 /* ingrandisco leggermente le icone della playbar all'hover 
 e gli do un'animazione di transizione */
-.playbar-icons ul li:hover {
-    transform: scale(1.1);
+.playbar-icons ul li:hover,
+.right-player div i:hover {
+    transform: scale(1.2);
     /* Imposto una transizione così da rendere più
     fluido l'ingrandirsi dell'icona all'hover
     con il mouse */
     transition: all 0.5s ease-in;
 }
 
-/* Do un'animazione di transizione alle icone 
-della playbar centrale */
-.playbar-icons ul li {
-    transition: all 0.8s ease-in;
-}
-
-/* L'icona play la ingrandisco leggermente di più */
-.playbar-icons .fa-circle-play:hover {
-    transform: scale(1.2);
-    transition: all 0.8s ease-in;
-}
-
 /* FINE SCALE E ANIMAZIONI */
 
 /* Do a tutte le icone del footer un cursor pointer */
-.playbar-icons ul li {
+.playbar-icons ul li,
+.left-player .album img,
+.left-player .album ul li,
+.left-player .icon i {
     cursor: pointer;
+}
+
+/* ------ Fine Playbar centrale ------- */
+
+/* ------ Playbar sinistra ------- */
+
+/* Padding altezza e larghezza left-player */
+.left-player .album,
+.left-player .album img,
+.left-player .icon {
+    padding: 20px 10px;
+    height: 100px;
+    width: 100%;
+}
+
+.left-player .album img {
+    width: 50%;
+    object-fit: conver;
+}
+
+.left-player .album-info {
+    width: 70%;
+}
+
+.left-player .icon {
+    width: 30%;
+}
+
+/* Distanzio le due icone */
+.left-player .icon {
+    gap: 25px;
+}
+
+.left-player .info-album-playing li {
+    color: var(--color-light);
+    font-weight: 700;
+}
+
+/* Imposto all'hover del nome brano il testo sottolineato */
+.left-player .info-album-playing li a:hover {
+    text-decoration: underline;
+}
+
+/* Colori all'hover e non sulle icone */
+.left-player .icon i {
+    color: var(--color-lightgrey);
+}
+
+.left-player .icon i:hover {
+    color: var(--color-light)
+}
+
+/* ------ Fine Playbar sinistra ------- */
+
+/* ------ Playbar destra  ------- */
+.right-player {
+    gap: 15px;
+}
+
+.right-player .controller-volume input[type="range"] {
+    margin-bottom: 10px;
+}
+/* Centro meglio il player con un margin-bottom */
+.right-player {
+    padding: 20px 10px;
 }
 
 /* ------------ *

@@ -270,8 +270,24 @@
                 </div>
             </main>
         </div>
-        <footer class="d-flex j-content-center a-items-center debug">
-            <div class="left-player debug "></div>
+        <footer class="d-flex debug">
+
+            <div class="left-player d-flex debug">
+                <div class="album d-flex a-items-center debug">
+                    <img src="img/sinister.jpeg" alt="Listening album">
+                    <div class="album-info debug">
+                        <ul class="info-album-playing d-flex f-column debug">
+                            <li>Sinister</li>
+                            <li><a href="#"><small>Brano Nome</small></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="icon d-flex j-content-end a-items-center debug">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-folder"></i>
+                </div>
+            </div>
+
             <div class="center-player d-flex j-content-center a-content-center a-items-center debug">
                 <div class="playbar-center debug">
                     <div class="playbar-icons debug">
@@ -296,7 +312,22 @@
                     </div>
                 </div>
             </div>
-            <div class="right-player debug"></div>
+
+            <div class="right-player d-flex j-content-end a-items-center debug">
+                <div class="">
+                    <i class="fa-solid fa-list"></i>
+                </div>
+                <div>
+                    <i class="fa-solid fa-desktop"></i>
+                </div>
+                <div>
+                    <i class="fa-solid fa-volume-high"></i>
+                </div>
+                <div class="controller-volume">
+                    <input type="range" value="30" min="0" max="100">
+                </div>
+
+            </div>
         </footer>
     </div>
 </body>
