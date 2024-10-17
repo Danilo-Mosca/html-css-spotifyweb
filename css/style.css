@@ -16,9 +16,9 @@
     box-sizing: border-box;
 }
 
-.debug {
+/* .debug {
     border: 1px solid red;
-}
+} */
 
 /* Classe fluida per le immagini */
 img {
@@ -63,6 +63,7 @@ h4 {
 hr {
     border: 1px solid var(--color-lightgrey);
     margin: 0 15px;
+    width: 100%;
 }
 
 .upgrade-button {
@@ -460,12 +461,12 @@ footer {
 
 .left-player,
 .right-player {
-    width: 20vw;
+    width: 30vw;
     flex-grow: 0;
 }
 
 .center-player {
-    width: 80vw;
+    width: 70vw;
     flex-grow: 1;
 }
 
@@ -510,11 +511,11 @@ l'input tipe range sia larga il 100% del suo contenuto */
 }
 
 /* Assegno a tutta la playbar centrale una larghezza
-del 70% del suo contenitore così da creare spaziature
+del 80% del suo contenitore così da creare spaziature
 tra la sezione di destra e quella di sinistra ed evitare
 così sbordure inaspettate */
 .center-player .playbar-center {
-    width: 70%;
+    width: 80%;
 }
 
 /* Do a .playbar-icons (figlio di .center-player) 
@@ -578,7 +579,7 @@ e gli do un'animazione di transizione */
 /* Padding altezza e larghezza left-player */
 .left-player .album,
 .left-player .album img,
-.left-player .icon {
+.left-player .icon .right-player {
     padding: 20px 10px;
     height: 100px;
     width: 100%;
@@ -586,20 +587,20 @@ e gli do un'animazione di transizione */
 
 .left-player .album img {
     width: 50%;
-    object-fit: conver;
+    object-fit: cover;
 }
 
 .left-player .album-info {
-    width: 70%;
+    width: 87%;
 }
 
 .left-player .icon {
-    width: 30%;
+    width: 23%;
 }
 
 /* Distanzio le due icone */
 .left-player .icon {
-    gap: 25px;
+    gap: 15px;
 }
 
 .left-player .info-album-playing li {
@@ -631,6 +632,7 @@ e gli do un'animazione di transizione */
 .right-player .controller-volume input[type="range"] {
     margin-bottom: 10px;
 }
+
 /* Centro meglio il player con un margin-bottom */
 .right-player {
     padding: 20px 10px;
@@ -657,6 +659,27 @@ e gli do un'animazione di transizione */
     /* Sposto il pulsante */
     .upgrade-button {
         margin-right: 40px;
+    }
+
+    /* Riduco l'ampiezza dei vari player del footer */
+    .left-player,
+    .right-player {
+        width: 40vw;
+    }
+
+    .center-player {
+        width: 60vw;
+    }
+
+    /* Riduco la spaziatura tra la playbar centrale e il suo 
+    contenitore */
+    .center-player .playbar-center {
+        width: 90%;
+    }
+
+    /* Diminuisco leggermente la grandezza del font del footer */
+    footer {
+        font-size: 0.8em;
     }
 }
 
@@ -723,6 +746,21 @@ e gli do un'animazione di transizione */
         display: flex;
         justify-content: center;
     }
+
+    /* Riduco l'ampiezza dei vari player del footer */
+    .left-player,
+    .right-player {
+        width: 52vw;
+    }
+
+    .center-player {
+        width: 48vw;
+    }
+
+    /* Diminuisco la grandezza del font del footer */
+    footer {
+        font-size: 0.7em;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -736,4 +774,41 @@ e gli do un'animazione di transizione */
         padding: 10px 20px;
     }
 
+    /* Riduco l'ampiezza dei vari player del footer */
+    .left-player {
+        width: 60vw;
+    }
+
+    .right-player {
+        width: 60vw;
+    }
+
+    .center-player {
+        width: 40vw;
+    }
+
+    /* Tolgo la spaziatura tra la playbar centrale e il suo 
+    contenitore */
+    .center-player .playbar-center {
+        width: 100%;
+    }
+
+    /* Diminuisco la grandezza del font del footer */
+    footer {
+        font-size: 0.6em;
+    }
+}
+
+
+@media screen and (max-width: 421px) {
+
+
+    /* Tolgo dal display il player sinistro e destro */
+    .left-player {
+        display: none;
+    }
+
+    .right-player {
+        display: none;
+    }
 }
