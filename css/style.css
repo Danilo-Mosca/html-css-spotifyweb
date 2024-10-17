@@ -650,21 +650,6 @@ e gli do un'animazione di transizione */
 }
 
 /* ------ BONUS PERSONALIZZA COLORE ------- */
-/* Modifico la barra di scorrimento laterale */
-
-/* ::-webkit-scrollbar
-{
-	width: 6px;
-	background-color: var(--color-highlight);
-}
-
-::-webkit-scrollbar-thumb
-{
-	background-color: transparent;
-} */
-
-
-/* Larghezza barra di scorrimento */
 ::-webkit-scrollbar {
     width: 10px;
   }
